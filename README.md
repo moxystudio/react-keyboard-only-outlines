@@ -2,9 +2,9 @@
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
-[npm-url]:https://npmjs.org/package/keyboard-only-outlines
-[downloads-image]:https://img.shields.io/npm/dm/keyboard-only-outlines.svg
-[npm-image]:https://img.shields.io/npm/v/keyboard-only-outlines.svg
+[npm-url]:https://npmjs.org/package/react-keyboard-only-outlines
+[downloads-image]:https://img.shields.io/npm/dm/react-keyboard-only-outlines.svg
+[npm-image]:https://img.shields.io/npm/v/react-keyboard-only-outlines.svg
 [travis-url]:https://travis-ci.org/moxystudio/react-keyboard-only-outlines
 [travis-image]:http://img.shields.io/travis/moxystudio/react-keyboard-only-outlines/master.svg
 [codecov-url]:https://codecov.io/gh/moxystudio/react-keyboard-only-outlines
