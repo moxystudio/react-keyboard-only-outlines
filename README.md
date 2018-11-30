@@ -29,7 +29,7 @@ $ npm install react-keyboard-only-outlines
 You should use this component just once in your project:
 
 ```jsx
-import { KeyboardOnlyOutlines } from '@discussify/styleguide';
+import { KeyboardOnlyOutlines } from 'react-keyboard-only-outlines';
 
 <KeyboardOnlyOutlines>
     <MyApp />
