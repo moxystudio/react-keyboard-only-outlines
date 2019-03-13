@@ -2,17 +2,71 @@
   "name": "react-keyboard-only-outlines",
   "version": "0.0.0",
   "description": "A React component that enables keyboard-only-outlines so that outlines are only visible when using the keyboard",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moxystudio/react-keyboard-only-outlines.git"
+  },
+  "keywords": [
+    "react",
+    "outline",
+    "focus",
+    "tab",
+    "click",
+    "keyboard"
+  ],
+  "author": "João Mota <joaomssmota@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moxystudio/react-keyboard-only-outlines/issues"
+  },
+  "homepage": "https://github.com/moxystudio/react-keyboard-only-outlines#readme",
+  "dependencies": {
+    "keyboard-only-outlines": "^1.0.1"
+  },
+  "peerDepedencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.0",
+    "acorn": "^6.0.2",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.5.0",
+    "babel-preset-moxy": "^3.0.4",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "eslint": "^5.3.0",
+    "eslint-config-moxy": "^7.0.1",
+    "husky": "^1.0.0",
+    "jest": "^24.5.0",
+    "jest-serializer-path": "^0.1.15",
+    "lint-staged": "^8.1.5",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "standard-version": "^5.0.1"
+  },
   "scripts": {
-    "build": "",
+    "build:commonjs": "BABEL_ENV=commonjs babel src -d lib",
+    "build:es": "BABEL_ENV=es babel src -d es",
+    "build": "npm run build:commonjs && npm run build:es",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "jest --coverage",
-    "prerelease": "npm t && npm run lint",
+    "prerelease": "npm t && npm run lint && npm run build",
     "release": "standard-version"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -36,53 +90,11 @@
       "@commitlint/config-conventional"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/moxystudio/react-keyboard-only-outlines.git"
-  },
-  "keywords": [
-    "react",
-    "keyboard",
-    "outline",
-    "accessbility"
-  ],
-  "author": "João Mota",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/moxystudio/react-keyboard-only-outlines/issues"
-  },
-  "homepage": "https://github.com/moxystudio/react-keyboard-only-outlines#readme",
-  "dependencies": {
-    "keyboard-only-outlines": "^1.0.1"
-  },
-  "peerDepedencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.0",
-    "acorn": "^6.0.2",
-    "babel-eslint": "^10.0.1",
-    "babel-preset-moxy": "^2.3.5",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
-    "eslint": "^5.3.0",
-    "eslint-config-moxy": "^6.0.1",
-    "husky": "^1.0.0",
-    "jest": "^23.6.0",
-    "jest-serializer-path": "^0.1.15",
-    "lint-staged": "^7.2.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "standard-version": "^4.4.0"
-  },
   "jest": {
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       ".enzyme.config.js"
     ],
-    "setupTestFrameworkScriptFile": "./.enzyme.config.js"
+    "setupFilesAfterEnv": ["./.enzyme.config.js"]
   }
 }

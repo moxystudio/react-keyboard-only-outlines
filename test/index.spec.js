@@ -1,7 +1,7 @@
 import keyboardOnlyOutlines from 'keyboard-only-outlines';
 import React from 'react';
 import { mount } from 'enzyme';
-import Component from '../index';
+import Component from '../src/index';
 
 jest.mock('keyboard-only-outlines', () => jest.fn(() => jest.fn()));
 

@@ -1,6 +1,6 @@
-# KeyboardOnlyOutlines
+# react-keyboard-outlines
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
 [npm-url]:https://npmjs.org/package/react-keyboard-only-outlines
 [downloads-image]:https://img.shields.io/npm/dm/react-keyboard-only-outlines.svg
@@ -13,16 +13,18 @@
 [david-dm-image]:https://img.shields.io/david/moxystudio/react-keyboard-only-outlines.svg
 [david-dm-dev-url]:https://david-dm.org/moxystudio/react-keyboard-only-outlines?type=dev
 [david-dm-dev-image]:https://img.shields.io/david/dev/moxystudio/react-keyboard-only-outlines.svg
-[greenkeeper-image]:https://badges.greenkeeper.io/moxystudio/react-keyboard-only-outlines.svg
-[greenkeeper-url]:https://greenkeeper.io/
 
 A component that enables [keyboard-only-outlines](https://github.com/moxystudio/js-keyboard-only-outlines) so that outlines are only visible when using the keyboard.
+
 
 ## Installation
 
 ```sh
 $ npm install react-keyboard-only-outlines
 ```
+
+This library is written in modern JavaScript and is published in both CommonJS and ES module transpiled variants. If you target older browsers please make sure to transpile accordingly.
+
 
 ## Usage
 
@@ -36,6 +38,7 @@ import { KeyboardOnlyOutlines } from 'react-keyboard-only-outlines';
 </KeyboardOnlyOutlines>
 ```
 
+
 ## Props
 
 | name | type | default | description |
@@ -44,6 +47,7 @@ import { KeyboardOnlyOutlines } from 'react-keyboard-only-outlines';
 | styles | string | See [keyboard-only-outlines](https://github.com/moxystudio/js-keyboard-only-outlines) | The styles to apply when a focus event is caused by mouse navigation |
 
 The `stylesheetTarget` is automatically inferred by checking the component's [rootNode](https://developer.mozilla.org/en-US/docs/Web/API/Node/getRootNode). In most cases, this will be `document.head` unless the component is mounted within a shadow root.
+
 
 ## Tests
 
