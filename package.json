@@ -1,0 +1,88 @@
+{
+  "name": "react-keyboard-only-outlines",
+  "version": "0.0.0",
+  "description": "A React component that enables keyboard-only-outlines so that outlines are only visible when using the keyboard",
+  "main": "index.js",
+  "scripts": {
+    "build": "",
+    "lint": "eslint --ignore-path .gitignore .",
+    "test": "jest --coverage",
+    "prerelease": "npm t && npm run lint",
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "posttag": "git push --follow-tags origin master && npm publish"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --ignore-pattern test/fixtures",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moxystudio/react-keyboard-only-outlines.git"
+  },
+  "keywords": [
+    "react",
+    "keyboard",
+    "outline",
+    "accessbility"
+  ],
+  "author": "João Mota",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moxystudio/react-keyboard-only-outlines/issues"
+  },
+  "homepage": "https://github.com/moxystudio/react-keyboard-only-outlines#readme",
+  "dependencies": {
+    "keyboard-only-outlines": "^1.0.1"
+  },
+  "peerDepedencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.0",
+    "acorn": "^6.0.2",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-moxy": "^2.3.5",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "eslint": "^5.3.0",
+    "eslint-config-moxy": "^6.0.1",
+    "husky": "^1.0.0",
+    "jest": "^23.6.0",
+    "jest-serializer-path": "^0.1.15",
+    "lint-staged": "^7.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "standard-version": "^4.4.0"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      ".enzyme.config.js"
+    ],
+    "setupTestFrameworkScriptFile": "./.enzyme.config.js"
+  }
+}
