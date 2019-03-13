@@ -1,6 +1,6 @@
 {
   "name": "react-keyboard-only-outlines",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A React component that enables keyboard-only-outlines so that outlines are only visible when using the keyboard",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -95,6 +95,8 @@
       "/node_modules/",
       ".enzyme.config.js"
     ],
-    "setupFilesAfterEnv": ["./.enzyme.config.js"]
+    "setupFilesAfterEnv": [
+      "./.enzyme.config.js"
+    ]
   }
 }
