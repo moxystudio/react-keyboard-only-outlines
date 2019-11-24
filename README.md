@@ -43,10 +43,8 @@ import KeyboardOnlyOutlines from 'react-keyboard-only-outlines';
 
 | name | type | default | description |
 | ---- | ---- | ------- | ----------- |
-| stylesheetTarget | DOM Node | Automatic, see below | The DOM node where to insert the stylesheet with styles to disable the outlines |
+| stylesheetTarget | DOM Node | See [keyboard-only-outlines](https://github.com/moxystudio/js-keyboard-only-outlines) | The DOM node where to insert the stylesheet with styles to disable the outlines |
 | styles | string | See [keyboard-only-outlines](https://github.com/moxystudio/js-keyboard-only-outlines) | The styles to apply when a focus event is caused by mouse navigation |
-
-The `stylesheetTarget` is automatically inferred by checking the component's [rootNode](https://developer.mozilla.org/en-US/docs/Web/API/Node/getRootNode). In most cases, this will be `document.head` unless the component is mounted within a shadow root.
 
 
 ## Tests

@@ -1,13 +1,7 @@
 import { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
-import keyboardOnlyOutlines from 'keyboard-only-outlines';
-
-const getStylesheetTarget = (node) => {
-    const rootNode = node.getRootNode ? node.getRootNode() : document;
-
-    return rootNode === document ? document.head : rootNode;
-};
+import shallowEqual from 'shallowequal';
+import keyboardOnlyOutlines from '@moxy/keyboard-only-outlines';
 
 export default class KeyboardOnlyOutlines extends Component {
     static propTypes = {
@@ -16,29 +10,48 @@ export default class KeyboardOnlyOutlines extends Component {
         styles: PropTypes.string,
     };
 
+    static defaultProps = {
+        children: null,
+    };
+
+    keyboardOutlinesOptions;
+
     componentDidMount() {
-        const node = findDOMNode(this);
+        this.applyKeyboardOutlines();
+    }
 
-        if (!node) {
-            throw new Error('Unable to find DOM node, did the children actually render a DOM element?');
-        }
-
-        const options = {
-            stylesheetTarget: this.props.stylesheetTarget || getStylesheetTarget(node),
-        };
-
-        if (this.props.styles != null) {
-            options.styles = this.props.styles;
-        }
-
-        this.dispose = keyboardOnlyOutlines(options);
+    componentDidUpdate() {
+        this.applyKeyboardOutlines();
     }
 
     componentWillUnmount() {
-        this.dispose && this.dispose();
+        this.disposeKeyboardOutlines();
     }
 
     render() {
-        return this.props.children || null;
+        return this.props.children;
+    }
+
+    applyKeyboardOutlines() {
+        const { stylesheetTarget, styles } = this.props;
+
+        const options = { stylesheetTarget, styles };
+
+        // Skip if nothing changed
+        if (shallowEqual(options, this.keyboardOutlinesOptions)) {
+            return;
+        }
+
+        this.keyboardOutlinesOptions = options;
+
+        this.disposeKeyboardOutlines();
+        this.dispose = keyboardOnlyOutlines(options);
+    }
+
+    disposeKeyboardOutlines() {
+        if (this.dispose) {
+            this.dispose();
+            this.dispose = undefined;
+        }
     }
 }
