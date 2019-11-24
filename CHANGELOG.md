@@ -1,6 +1,17 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.0.0](https://github.com/moxystudio/react-keyboard-only-outlines/compare/v0.1.0...v1.0.0) (2019-11-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* support for shadow-dom was removed, use stylesheetTarget prop
+
+### Features
+
+* react to prop changes ([68689e2](https://github.com/moxystudio/react-keyboard-only-outlines/commit/68689e2add82af4f950cdcc2ffd24889b6175fa6))
 
 <a name="0.1.0"></a>
 # 0.1.0 (2019-03-13)
