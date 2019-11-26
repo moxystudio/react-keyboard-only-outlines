@@ -1,4 +1,4 @@
-# react-keyboard-outlines
+# react-keyboard-only-outlines
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
@@ -20,7 +20,7 @@ A component that enables [keyboard-only-outlines](https://github.com/moxystudio/
 ## Installation
 
 ```sh
-$ npm install react-keyboard-only-outlines
+$ npm install @moxy/react-keyboard-only-outlines
 ```
 
 This library is written in modern JavaScript and is published in both CommonJS and ES module transpiled variants. If you target older browsers please make sure to transpile accordingly.
