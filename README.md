@@ -31,7 +31,7 @@ This library is written in modern JavaScript and is published in both CommonJS a
 You should use this component just once in your project:
 
 ```jsx
-import KeyboardOnlyOutlines from 'react-keyboard-only-outlines';
+import KeyboardOnlyOutlines from '@moxy/react-keyboard-only-outlines';
 
 <KeyboardOnlyOutlines>
     <MyApp />
