@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/moxystudio/react-keyboard-only-outlines/compare/v1.0.0...v1.0.1) (2019-11-28)
+
+
+### Bug Fixes
+
+* do not pass undefined options ([64ee7bb](https://github.com/moxystudio/react-keyboard-only-outlines/commit/64ee7bb75a7772002c27fb0fffd3e188def5b906))
+
 ## [1.0.0](https://github.com/moxystudio/react-keyboard-only-outlines/compare/v0.1.0...v1.0.0) (2019-11-24)
 
 

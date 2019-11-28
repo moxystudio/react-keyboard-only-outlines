@@ -1,6 +1,6 @@
 {
   "name": "@moxy/react-keyboard-only-outlines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React component that enables keyboard-only-outlines so that outlines are only visible when using the keyboard",
   "main": "lib/index.js",
   "module": "es/index.js",
