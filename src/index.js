@@ -33,9 +33,14 @@ export default class KeyboardOnlyOutlines extends Component {
     }
 
     applyKeyboardOutlines() {
-        const { stylesheetTarget, styles } = this.props;
+        const options = {};
 
-        const options = { stylesheetTarget, styles };
+        if (this.props.stylesheetTarget != null) {
+            options.stylesheetTarget = this.props.stylesheetTarget;
+        }
+        if (this.props.styles != null) {
+            options.styles = this.props.styles;
+        }
 
         // Skip if nothing changed
         if (shallowEqual(options, this.keyboardOutlinesOptions)) {

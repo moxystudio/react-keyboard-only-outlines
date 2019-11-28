@@ -13,6 +13,7 @@ it('should call keyboardOnlyOutlines on mount', () => {
     render(<KeyboardOnlyOutlines>Child</KeyboardOnlyOutlines>);
 
     expect(keyboardOnlyOutlines).toHaveBeenCalledTimes(1);
+    expect(keyboardOnlyOutlines).toHaveBeenCalledWith({});
 });
 
 it('should dispose keyboardOnlyOutlines on unmount', () => {
@@ -44,6 +45,7 @@ it('should reapply keyboardOnlyOutlines if styles prop changed', () => {
     rerender(<KeyboardOnlyOutlines styles="">Child</KeyboardOnlyOutlines>);
 
     expect(keyboardOnlyOutlines).toHaveBeenCalledTimes(2);
+    expect(keyboardOnlyOutlines).toHaveBeenCalledWith({ styles: '' });
     expect(dispose).toHaveBeenCalledTimes(1);
 });
 
@@ -55,6 +57,7 @@ it('should reapply keyboardOnlyOutlines if stylesheetTarget prop changed', () =>
     rerender(<KeyboardOnlyOutlines stylesheetTarget={ document.body }>Child</KeyboardOnlyOutlines>);
 
     expect(keyboardOnlyOutlines).toHaveBeenCalledTimes(2);
+    expect(keyboardOnlyOutlines).toHaveBeenCalledWith({ stylesheetTarget: document.body });
     expect(dispose).toHaveBeenCalledTimes(1);
 });
 
@@ -64,18 +67,4 @@ it('should not reapply if children prop changed but target node staid the same',
     rerender(<KeyboardOnlyOutlines>Foo</KeyboardOnlyOutlines>);
 
     expect(keyboardOnlyOutlines).toHaveBeenCalledTimes(1);
-});
-
-it('should call keyboardOnlyOutlines with the correct props as options', () => {
-    render(
-        <KeyboardOnlyOutlines styles="foo" stylesheetTarget={ document.body }>
-            Child
-        </KeyboardOnlyOutlines>,
-    );
-
-    expect(keyboardOnlyOutlines).toHaveBeenCalledTimes(1);
-    expect(keyboardOnlyOutlines).toHaveBeenCalledWith({
-        styles: 'foo',
-        stylesheetTarget: document.body,
-    });
 });
